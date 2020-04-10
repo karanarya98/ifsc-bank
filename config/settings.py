@@ -10,14 +10,13 @@ PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'smhp$3)1*fzc8(ptv_1**kmtq!z+o^9)dsy(u8iijyeo&$(+mn')
 
-DEBUG = True
+DEBUG = False
 
 ENV = os.environ.get('ENVIRONMENT', 'local')
 
 SITE_ID = 1
 
-ALLOWED_HOSTS = ['https://ifsc-bank-india.herokuapp.com/',
-                 '']
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django.contrib.admin',
