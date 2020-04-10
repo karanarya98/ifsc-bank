@@ -16,7 +16,7 @@ ENV = os.environ.get('ENVIRONMENT', 'local')
 
 SITE_ID = 1
 
-ALLOWED_HOSTS = ['',
+ALLOWED_HOSTS = ['https://ifsc-bank-india.herokuapp.com/',
                  '']
 
 INSTALLED_APPS = (
