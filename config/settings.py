@@ -1,6 +1,7 @@
 import os
 
 import dj_database_url
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -114,3 +115,4 @@ else:
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", "mediaroot")
 
 MEDIA_URL = '/media/'
+django_heroku.settings[locals()]
