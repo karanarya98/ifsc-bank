@@ -4,7 +4,7 @@ from django.db import models
 class Bank(models.Model):
 
     id = models.BigIntegerField(primary_key=True)
-    name = models.CharField(max_length=255, help_text="Name of the Bank",on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, help_text="Name of the Bank")
 
     class Meta:
         db_table = 'bank'
