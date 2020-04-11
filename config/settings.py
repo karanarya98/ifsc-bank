@@ -6,7 +6,12 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)
-
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles') 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+     os.path.join(PROJECT_ROOT, 'static'),
+ )
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'smhp$3)1*fzc8(ptv_1**kmtq!z+o^9)dsy(u8iijyeo&$(+mn')
@@ -86,11 +91,7 @@ if ENV == 'local':
         }
     }
 else:
-    DATABASES = {
-        'default': dj_database_url.config(
-                default=os.environ.get('DATABASE_URL')
-        )
-    }
+    DATABASES = { 'default': dj_database_url.config( default=config('DATABASE_URL') ) }
 
 LANGUAGE_CODE = 'en-us'
 
@@ -115,4 +116,5 @@ else:
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", "mediaroot")
 
 MEDIA_URL = '/media/'
+
 django_heroku.settings[locals()]
