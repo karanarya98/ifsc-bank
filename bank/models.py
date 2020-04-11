@@ -4,7 +4,7 @@ from django.db import models
 class Bank(models.Model):
 
     id = models.BigIntegerField(primary_key=True)
-    name = models.CharField(max_length=255, help_text="Name of the Bank")
+    name = models.CharField(max_length=255, help_text="Name of the Bank",on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'bank'
@@ -23,17 +23,17 @@ class Branch(models.Model):
     ifsc = models.CharField(primary_key=True, max_length=11,
                             help_text="IFSC code of Bank Branch")
 
-    bank = models.ForeignKey(Bank, help_text="FK to Bank table")
+    bank = models.ForeignKey(Bank, help_text="FK to Bank table",on_delete=models.CASCADE)
 
-    branch = models.CharField(max_length=127, help_text="Area of the branch is located")
+    branch = models.CharField(max_length=127, help_text="Area of the branch is located",on_delete=models.CASCADE)
 
-    address = models.CharField(max_length=195, help_text="Detailed address of the branch")
+    address = models.CharField(max_length=195, help_text="Detailed address of the branch",on_delete=models.CASCADE)
 
-    city = models.CharField(max_length=100, help_text="City where branch is located")
+    city = models.CharField(max_length=100, help_text="City where branch is located",on_delete=models.CASCADE)
 
-    district = models.CharField(max_length=100, help_text="District where branch is located")
+    district = models.CharField(max_length=100, help_text="District where branch is located",on_delete=models.CASCADE)
 
-    state = models.CharField(max_length=100, help_text="State in which branch is located")
+    state = models.CharField(max_length=100, help_text="State in which branch is located",on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'branch'
