@@ -1,1 +1,2 @@
-web: gunicorn ifsc-bank.wsgi --log-file -
+release: python manage.py migrate
+web: gunicorn bank-ifsc-search.wsgi

@@ -117,4 +117,5 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", "mediaroot")
 
 MEDIA_URL = '/media/'
 
-django_heroku.settings[locals()]
+django_heroku.settings(locals())
+
