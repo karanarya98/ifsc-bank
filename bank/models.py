@@ -25,15 +25,15 @@ class Branch(models.Model):
 
     bank = models.ForeignKey(Bank, help_text="FK to Bank table",on_delete=models.CASCADE)
 
-    branch = models.CharField(max_length=127, help_text="Area of the branch is located",on_delete=models.CASCADE)
+    branch = models.CharField(max_length=127, help_text="Area of the branch is located")
 
-    address = models.CharField(max_length=195, help_text="Detailed address of the branch",on_delete=models.CASCADE)
+    address = models.CharField(max_length=195, help_text="Detailed address of the branch")
 
-    city = models.CharField(max_length=100, help_text="City where branch is located",on_delete=models.CASCADE)
+    city = models.CharField(max_length=100, help_text="City where branch is located")
 
-    district = models.CharField(max_length=100, help_text="District where branch is located",on_delete=models.CASCADE)
+    district = models.CharField(max_length=100, help_text="District where branch is located")
 
-    state = models.CharField(max_length=100, help_text="State in which branch is located",on_delete=models.CASCADE)
+    state = models.CharField(max_length=100, help_text="State in which branch is located")
 
     class Meta:
         db_table = 'branch'
